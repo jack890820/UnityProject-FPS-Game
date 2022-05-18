@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &110144516 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4769624127071926655, guid: 28ae002e9d0465e4ab2ecaf21f06f867, type: 3}
+  m_PrefabInstance: {fileID: 5483517439151670620}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5fbc9182d1bbd4fb177b088a462a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &142700997
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +759,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475299826}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &506547681 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6513224296356755581, guid: 5dba971d7ce61c648be28b9b1da3f20e, type: 3}
+  m_PrefabInstance: {fileID: 6955529237732573107}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,30 +1881,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 699263591885561652, guid: 5dba971d7ce61c648be28b9b1da3f20e, type: 3}
-      propertyPath: m_Color.a
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322119474411100391, guid: 5dba971d7ce61c648be28b9b1da3f20e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2536348840381283022, guid: 5dba971d7ce61c648be28b9b1da3f20e, type: 3}
-      propertyPath: m_FillAmount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684630747400861010, guid: 5dba971d7ce61c648be28b9b1da3f20e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262078254907029433, guid: 5dba971d7ce61c648be28b9b1da3f20e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6955529237072215892, guid: 5dba971d7ce61c648be28b9b1da3f20e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1391026670325798454, guid: 5dba971d7ce61c648be28b9b1da3f20e, type: 3}
+      propertyPath: grenadeCount
+      value: 
+      objectReference: {fileID: 506547681}
+    - target: {fileID: 1391026670325798454, guid: 5dba971d7ce61c648be28b9b1da3f20e, type: 3}
+      propertyPath: weaponHolderInfo
+      value: 
+      objectReference: {fileID: 110144516}
     - target: {fileID: 6955529237836828904, guid: 5dba971d7ce61c648be28b9b1da3f20e, type: 3}
       propertyPath: m_Camera
       value: 

@@ -11,6 +11,7 @@ public class WeaponHolderInfo : MonoBehaviour
     [SerializeField] public WeaponScriptableObject currentWeaponScript; 
     [SerializeField] public Weapon currentWeapon;
     [SerializeField] GameObject grenadePrefab = null;
+    [SerializeField] public int grenadeCount = 3;
 
     private void Update() 
     {
@@ -20,15 +21,16 @@ public class WeaponHolderInfo : MonoBehaviour
 
     public void ThrowGrenade()
     {
-        if (!grenadePrefab)
+        if (!grenadePrefab || grenadeCount <= 0)
         {
             return;
         }else
-        {
+        {            
             GameObject grenade = Instantiate(grenadePrefab, transform.position, transform.rotation);
             Rigidbody rb = grenade.GetComponent<Rigidbody>();
-
             rb.AddForce(transform.forward * GetComponentInParent<PlayerMovemont>().playerForce, ForceMode.VelocityChange);
+
+            grenadeCount--;
         }
     }
 }
