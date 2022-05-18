@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class Weapon : Launcher
 {
-    [SerializeField] public int maxAmmoCount; //最大彈藥數
-    [SerializeField]WeaponScriptableObject weaponType;
+    //摘要
+    //  武器
+    //  射擊、裝填方法
+    
+    [SerializeField]WeaponScriptableObject weaponType; //武器資訊
+    [SerializeField] public int maxAmmoCount; //最大彈藥數    
     public int ammoCount; //彈藥數
     [SerializeField] float fireRate, maxreloadTime, doubleClickTime; //射速, 最大裝填時間, 雙擊時間
     float reloadTime, lastClickTime, fillAmountReload, lastFireTime; //裝填時間, 最後點擊時間, 裝填進度條, 最後開火時間
@@ -24,8 +28,6 @@ public class Weapon : Launcher
 
     void Update()
     {
-        Fire();
-        Reload();
         StillCanReload();
     }
 
@@ -38,9 +40,9 @@ public class Weapon : Launcher
         }
     }
 
-    private void Reload()
+    public void Reload()
     {
-        if (Input.GetKeyDown(KeyCode.R) && reloading == false) //當按下且不再裝填中時才執行
+        if (reloading == false) //當按下且不再裝填中時才執行
         {
             StartCoroutine(IEReload()); //開始裝填
 
@@ -61,7 +63,7 @@ public class Weapon : Launcher
 
     public override void Fire()
     {
-        if(Input.GetMouseButton(0) && !(ammoCount == 0) && reloading == false) //當按下且彈藥數不為零也不在裝填中時 才執行
+        if(!(ammoCount == 0) && reloading == false) //當按下且彈藥數不為零也不在裝填中時 才執行
         {
             if(Time.time > (60/fireRate) + lastFireTime) //設定武器開火延遲 60/fireRate(每分鐘設速)
             {

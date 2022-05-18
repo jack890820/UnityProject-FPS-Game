@@ -5,6 +5,9 @@ using UnityEngine.Pool;
 
 public class Bullet : MonoBehaviour
 {
+    //摘要
+    //  子彈組件
+
     [SerializeField] float force, lifeTime; //物件速度
     [SerializeField] Rigidbody rb;
     private IObjectPool<Bullet> bulletPool; //物件池

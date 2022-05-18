@@ -6,6 +6,11 @@ using UnityEngine.Pool;
 
 public class Launcher : MonoBehaviour
 {
+    //摘要
+    //  發射器組件
+    //  直接使用繼承修改
+    //  物件池與物件產生的位置(muzzle)
+
     [SerializeField] Transform muzzle;
     [SerializeField] Bullet bulletPrefab; //物件Prefab
     private IObjectPool<Bullet> bulletPool; //物件池

@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class DestroyNearby : MonoBehaviour
 {
+    //摘要
+    //  爆炸功能
+    //  需要使用時呼叫Expoled()方法
+    //  或使用繼承
+
     [SerializeField] public Transform explosionCenter; //爆炸本體
     [SerializeField] GameObject explosionEffect; //爆炸特效
-    [SerializeField] float radius; //爆炸範圍
-    [SerializeField] float force; //爆炸力道
-    [SerializeField] bool isExpoled; //是否爆炸
+    [SerializeField] public float radius; //爆炸範圍
+    [SerializeField] public float force; //爆炸力道
+    [SerializeField] public bool isExpoled; //是否爆炸
 
     void Start() 
     {
@@ -20,7 +25,7 @@ public class DestroyNearby : MonoBehaviour
         
     }
 
-    void Expoled()
+    public void Expoled()
     {
         Instantiate(explosionEffect, transform.position, transform.rotation); //在爆炸本體生成爆炸特效
 
@@ -46,7 +51,7 @@ public class DestroyNearby : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        Destroy(gameObject);       
     }
 
     void OnDrawGizmosSelected() //繪出物體radius

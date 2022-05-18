@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class PlayerMovemont : MonoBehaviour
 {
+    //摘要
+    //  負責Player相機旋轉、移動、移動角度
+    //  Player移動、衝刺、跳躍
+
     public static PlayerMovemont instance;
     [SerializeField]private Rigidbody rb;
     [SerializeField]private float maxMoveSpeed = 10f;
     [SerializeField]private float moveSpeed;    
     [SerializeField]private float jumpForce = 50f;
+    [SerializeField] public float playerForce = 50f;
     [SerializeField]public bool isOnTheGround = true;
 
     [SerializeField]private float minX = -60f;
@@ -26,12 +31,6 @@ public class PlayerMovemont : MonoBehaviour
         moveSpeed = maxMoveSpeed;
         isSprint = false;
     }
-
-    void start()
-    {
-        
-    }
-
     void FixedUpdate()
     {
         PlayerController();
@@ -70,7 +69,7 @@ public class PlayerMovemont : MonoBehaviour
         transform.Translate(new Vector3(horizontal, 0, vertical) * (moveSpeed * Time.deltaTime));        
     }
 
-    private void Sprint()
+    public void Sprint()
     {
         if(Input.GetKey(KeyCode.LeftShift) && isSprint == false)
         {

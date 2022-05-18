@@ -1187,7 +1187,6 @@ GameObject:
   - component: {fileID: 5483517439207369011}
   - component: {fileID: 5483517439207369008}
   - component: {fileID: 5483517439207369004}
-  - component: {fileID: 8495977260733979671}
   - component: {fileID: 5483517439207369005}
   - component: {fileID: 6104212381438853972}
   m_Layer: 6
@@ -1247,18 +1246,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &8495977260733979671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5483517439207369015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 533998b2783b8ab4c99714fc127d9fdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5483517439207369005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1275,6 +1262,7 @@ MonoBehaviour:
   maxMoveSpeed: 3
   moveSpeed: 0
   jumpForce: 3
+  playerForce: 50
   isOnTheGround: 1
   minX: -60
   maxX: 60
@@ -1566,6 +1554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWeaponScript: {fileID: 0}
   currentWeapon: {fileID: 0}
+  grenadePrefab: {fileID: 2513779624336777098, guid: 2728a4f4974893544909ca28a08295da, type: 3}
 --- !u!1 &7568212424966721099
 GameObject:
   m_ObjectHideFlags: 0
