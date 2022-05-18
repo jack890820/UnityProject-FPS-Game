@@ -12,27 +12,37 @@ public class Vehicle : MonoBehaviour, IDestroyable
     //Destroyable
     [SerializeField]public AudioSource audioSource;
     [SerializeField]public AudioClip destroySound;
-    [SerializeField]public UnityEngine.Object[] destroyableNearby;
-
     [SerializeField]public float radius = 10f;
     [SerializeField] public Transform ibObject;
-
+    [SerializeField] Collider mainObject;
+    [SerializeField] List<GameObject> destroyableNearby;
 
     public void Start()
     {
-        
+        List<GameObject> destroyableNearby = new List<GameObject>();
     }
 
     void Update()
     {
-        ColliderDestroy();
-        DestroyObject();
+        OnTriggerEnter(mainObject);
+        OnTriggerExit(mainObject);
+        //DestroyObject();
+    } 
+
+    void OnTriggerEnter(Collider other) 
+    {
+        if(other.CompareTag("Destroyable"))
+        {
+            destroyableNearby.Add(other.attachedRigidbody.gameObject);
+        }
     }
 
-    public void ColliderDestroy()
+    void OnTriggerExit(Collider other) 
     {
-        UnityEngine.Object[] destroyableNearby = Physics.OverlapSphere(ibObject.position, radius, LayerMask.GetMask("Destroyable"));
-        //尚未解決摧毀主物件周遭的物件
+        if(other.CompareTag("Destroyable"))
+        {
+            destroyableNearby.Remove(other.attachedRigidbody.gameObject);
+        }
     }
 
     public void DestroyObject() //interface 摧毀物體
