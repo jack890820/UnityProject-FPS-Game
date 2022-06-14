@@ -6,32 +6,42 @@ public class GamePause : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
+    public Player mainPlayer;
+
+    void Start()
+    {
+        PauseMenuUI.SetActive(false);
+        GameIsPaused = false;
+        mainPlayer.PlayerController.SetActive(true);
+    }
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(GameIsPaused)
-            {
-                Resume();
-            }else
+            if(!GameIsPaused)
             {
                 Pause();
+            }else
+            {
+                Resume();
             }
         }
     }
 
     void Resume()
     {
-        PauseMenuUI.SetActive(true);
+        PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        mainPlayer.PlayerController.SetActive(true);
     }
 
     void Pause()
     {
-        PauseMenuUI.SetActive(false);
+        PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        mainPlayer.PlayerController.SetActive(false);
     }
 }

@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     //  負責Player按鍵操作
 
     [SerializeField] public GameObject miniMap;
+    [SerializeField] KeyCode openMiniMapKey = KeyCode.M;
+    [SerializeField] KeyCode fireKey = KeyCode.Mouse0;
+    [SerializeField] KeyCode reloadKey = KeyCode.R;
+    [SerializeField] KeyCode throwingGrenadeKey = KeyCode.G;
 
     void Start()
     {
@@ -31,11 +35,11 @@ public class PlayerController : MonoBehaviour
 
     private void OpenMiniMap()
     {
-        if (Input.GetKeyDown(KeyCode.M) && miniMap.activeSelf == false)
+        if (Input.GetKeyDown(openMiniMapKey) && miniMap.activeSelf == false)
         {
             miniMap.SetActive(true);
         }
-        else if (Input.GetKeyDown(KeyCode.M) && miniMap.activeSelf == true)
+        else if (Input.GetKeyDown(openMiniMapKey) && miniMap.activeSelf == true)
         {
             miniMap.SetActive(false);
         }
@@ -43,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
     private void Fire()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetKeyDown(fireKey))
         {
             gameObject.GetComponentInChildren<Weapon>().Fire();
         }
@@ -51,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     private void Reload()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(reloadKey))
         {
             gameObject.GetComponentInChildren<Weapon>().Reload();
         }
@@ -59,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     private void ThrowingGrenade()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(throwingGrenadeKey))
         {
             gameObject.GetComponentInChildren<WeaponHolderInfo>().ThrowGrenade();
         }
