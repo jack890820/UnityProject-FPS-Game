@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
     private void Fire()
     {
-        if (Input.GetKeyDown(fireKey))
+        if (Input.GetKey(fireKey))
         {
             gameObject.GetComponentInChildren<Weapon>().Fire();
         }
