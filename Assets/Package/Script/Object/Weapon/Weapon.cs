@@ -78,7 +78,7 @@ public class Weapon : Launcher
     {
         yield return new WaitForSeconds(doubleClickTime + .05f); //等待雙擊機會
         reloading = true; //裝填中
-        yield return new WaitForSeconds(reloadTime); //裝填時間
+        yield return new WaitForSecondsRealtime(reloadTime); //裝填時間
         ammoCount = maxAmmoCount; //裝填完後彈藥數等於最大彈藥數
         fillAmountReload = 0; //清除裝填進度條
         progressBarReload.fillAmount = 0; //清除裝填進度條
