@@ -6,13 +6,11 @@ public class GamePause : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
-    public Player mainPlayer;
 
     void Start()
     {
         PauseMenuUI.SetActive(false);
         GameIsPaused = false;
-        mainPlayer.PlayerController.SetActive(true);
     }
 
     void Update()
@@ -34,7 +32,6 @@ public class GamePause : MonoBehaviour
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        mainPlayer.PlayerController.SetActive(true);
     }
 
     void Pause()
@@ -42,6 +39,5 @@ public class GamePause : MonoBehaviour
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-        mainPlayer.PlayerController.SetActive(false);
     }
 }
