@@ -22,20 +22,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(Time.timeScale == 0)
-        {
-            return;
-        }else
-        {
-            OpenMiniMap();
-            ThrowingGrenade();
-            if(!gameObject.GetComponentInChildren<Weapon>())
-            {
-                return;
-            }
-            Fire();
-            Reload();
-        }                
+        if(Time.timeScale == 0) return;
+        OpenMiniMap();
+        ThrowingGrenade();
+
+        if(!gameObject.GetComponentInChildren<Weapon>()) return;
+        
+        Fire();
+        Reload();                
     }
 
     private void OpenMiniMap()

@@ -33,25 +33,18 @@ public class PlayerMovemont : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(Time.timeScale == 0)
-        {
-            return;
-        }else
-        {
-            PlayerController();
-            Sprint();
-            PlayerJump();
-        }        
+        if(Time.timeScale == 0) return;
+
+        PlayerController();
+        Sprint();
+        PlayerJump();
+              
     }
     void LateUpdate()
     {
-        if(Time.timeScale == 0)
-        {
-            return;
-        }else
-        {
-            CameraMovemont();
-        }
+        if(Time.timeScale == 0) return;
+
+        CameraMovemont();
     }
 
     private void CameraMovemont()
