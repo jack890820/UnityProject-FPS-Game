@@ -1,0 +1,12 @@
+{
+    "name": "com.northstar.testsubject",
+    "version": "1.0.0",
+    "displayName": "FPS Game Design Unity Package",
+    "description": "Testsubject Unity Package for fps game design",
+    "unity" : "2021.3",
+    "author": {
+        "name": "Taffy3",
+        "email": "jack890820@gmail.com",
+        "url": ""
+    }
+}
