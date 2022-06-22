@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpriteFocus : MonoBehaviour
+namespace TestSubjectCode
 {
-    [SerializeField] GameObject spriteObject;
-    [SerializeField] GameObject player;
-
-    // Start is called before the first frame update
-    void Start()
+    public class SpriteFocus : MonoBehaviour
     {
-        
-    }
+        [SerializeField] GameObject spriteObject;
+        [SerializeField] GameObject player;
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        LookAtPlayer();
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
+                
+            }
 
-    private void LookAtPlayer()
-    {
-        transform.LookAt(player.transform);
+        // Update is called once per frame
+        void FixedUpdate()
+        {
+            LookAtPlayer();
+        }
 
-        Debug.DrawLine(transform.position, player.transform.position, Color.red);
+        private void LookAtPlayer()
+        {
+            transform.LookAt(player.transform);
+
+            Debug.DrawLine(transform.position, player.transform.position, Color.red);
+        }
     }
 }

@@ -2,33 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grenade : DestroyNearby
+namespace TestSubjectCode
 {
-    //摘要
-    //  繼承DestroyNearby組件功能的組件
-    //  手榴彈
-
-    [SerializeField] float delay = 5f;    
-    float countDown;
-
-    private void Start() 
+    public class Grenade : DestroyNearby
     {
-        countDown = delay;        
-    }
+        //摘要
+        //  繼承DestroyNearby組件功能的組件
+        //  手榴彈
 
-    private void Update()
-    {
-        countDown -= Time.deltaTime;
+        [SerializeField] float delay = 5f;    
+        float countDown;
 
-        if (countDown <= 0f && !isExpoled)
+        private void Start() 
         {
-            Expoled();
+            countDown = delay;        
         }
-    }
 
-    void OnDrawGizmosSelected() //繪出物體radius
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(explosionCenter.position, radius);
+        private void Update()
+        {
+            countDown -= Time.deltaTime;
+
+            if (countDown <= 0f && !isExpoled)
+            {
+                Expoled();
+            }
+        }
+
+        void OnDrawGizmosSelected() //繪出物體radius
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(explosionCenter.position, radius);
+        }
     }
 }

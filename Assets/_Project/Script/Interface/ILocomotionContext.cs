@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ILocomotionContext
+namespace TestSubjectCode
 {
-    void SetState(ILocomotionState newState);
+    public interface ILocomotionContext
+    {
+        void SetState(ILocomotionState newState);
+    }
 }

@@ -2,35 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponHolderInfo : MonoBehaviour
+namespace TestSubjectCode
 {
-    //摘要
-    //  負責Player目前操作的武器以及武器資訊
-    //  以及Player能否使用手榴彈
-
-    [SerializeField] public WeaponScriptableObject currentWeaponScript; 
-    [SerializeField] public Weapon currentWeapon;
-    [SerializeField] GameObject grenadePrefab = null;
-    [SerializeField] public int grenadeCount = 3;
-
-    private void Update() 
+    public class WeaponHolderInfo : MonoBehaviour
     {
-        currentWeapon = GetComponentInChildren<Weapon>();
-        currentWeaponScript = GetComponentInChildren<Weapon>().GetWeaponInfo();
-    }
+        //摘要
+        //  負責Player目前操作的武器以及武器資訊
+        //  以及Player能否使用手榴彈
 
-    public void ThrowGrenade()
-    {
-        if (!grenadePrefab || grenadeCount <= 0)
+        [SerializeField] public WeaponScriptableObject currentWeaponScript; 
+        [SerializeField] public Weapon currentWeapon;
+        [SerializeField] GameObject grenadePrefab = null;
+        [SerializeField] public int grenadeCount = 3;
+
+        private void Update() 
         {
-            return;
-        }else
-        {            
-            GameObject grenade = Instantiate(grenadePrefab, transform.position, transform.rotation);
-            Rigidbody rb = grenade.GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * GetComponentInParent<PlayerMovemont>().playerForce, ForceMode.VelocityChange);
+            currentWeapon = GetComponentInChildren<Weapon>();
+            currentWeaponScript = GetComponentInChildren<Weapon>().GetWeaponInfo();
+        }
 
-            grenadeCount--;
+        public void ThrowGrenade()
+        {
+            if (!grenadePrefab || grenadeCount <= 0)
+            {
+                return;
+            }else
+            {            
+                GameObject grenade = Instantiate(grenadePrefab, transform.position, transform.rotation);
+                Rigidbody rb = grenade.GetComponent<Rigidbody>();
+                rb.AddForce(transform.forward * GetComponentInParent<PlayerMovemont>().playerForce, ForceMode.VelocityChange);
+
+                grenadeCount--;
+            }
         }
     }
 }

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destructible : MonoBehaviour
+namespace TestSubjectCode
 {
-    public void Destroy()
+    public class Destructible : MonoBehaviour
     {
-        Destroy(gameObject);
+        public void Destroy()
+        {
+            Destroy(gameObject);
+        }
     }
 }

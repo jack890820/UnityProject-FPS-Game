@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IDestroyable
+namespace TestSubjectCode
 {
-    void DestroyObject();
+    public interface IDestroyable
+    {
+        void DestroyObject();
+    }
 }

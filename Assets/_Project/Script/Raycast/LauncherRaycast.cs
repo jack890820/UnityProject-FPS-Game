@@ -2,30 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LauncherRaycast : MonoBehaviour
+namespace TestSubjectCode
 {
-    [SerializeField] float rayRange = 30f;
-    [SerializeField] Transform rayTransform;
-    Ray launcherRay;    
-
-    private void Start() 
+    public class LauncherRaycast : MonoBehaviour
     {
-        Ray launchgerRay = new Ray(rayTransform.transform.position, rayTransform.transform.forward * rayRange);
-    }
-    
-    void LateUpdate()
-    {
-        LauncherRay();
-    }
+        [SerializeField] float rayRange = 30f;
+        [SerializeField] Transform rayTransform;
+        Ray launcherRay;    
 
-    public void LauncherRay()
-    {        
-        RaycastHit hit;
-        Debug.DrawRay(rayTransform.transform.position, rayTransform.transform.forward * rayRange);
-
-        if(Physics.Raycast(launcherRay, out hit, rayRange, LayerMask.GetMask("Enemy")))
+        private void Start() 
         {
-            return;
+            Ray launchgerRay = new Ray(rayTransform.transform.position, rayTransform.transform.forward * rayRange);
+        }
+        
+        void LateUpdate()
+        {
+            LauncherRay();
+        }
+
+        public void LauncherRay()
+        {        
+            RaycastHit hit;
+            Debug.DrawRay(rayTransform.transform.position, rayTransform.transform.forward * rayRange);
+
+            if(Physics.Raycast(launcherRay, out hit, rayRange, LayerMask.GetMask("Enemy")))
+            {
+                return;
+            }
         }
     }
 }

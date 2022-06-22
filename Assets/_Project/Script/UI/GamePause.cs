@@ -2,42 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GamePause : MonoBehaviour
+namespace TestSubjectCode
 {
-    public static bool GameIsPaused = false;
-    public GameObject PauseMenuUI;
-
-    void Start()
+    public class GamePause : MonoBehaviour
     {
-        PauseMenuUI.SetActive(false);
-        GameIsPaused = false;
-    }
+        public static bool GameIsPaused = false;
+        public GameObject PauseMenuUI;
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        void Start()
         {
-            if(!GameIsPaused)
+            PauseMenuUI.SetActive(false);
+            GameIsPaused = false;
+        }
+
+        void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
             {
-                Pause();
-            }else
-            {
-                Resume();
+                if(!GameIsPaused)
+                {
+                    Pause();
+                }else
+                {
+                    Resume();
+                }
             }
         }
-    }
 
-    void Resume()
-    {
-        PauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
-    }
+        void Resume()
+        {
+            PauseMenuUI.SetActive(false);
+            Time.timeScale = 1f;
+            GameIsPaused = false;
+        }
 
-    void Pause()
-    {
-        PauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPaused = true;
+        void Pause()
+        {
+            PauseMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+            GameIsPaused = true;
+        }
     }
 }

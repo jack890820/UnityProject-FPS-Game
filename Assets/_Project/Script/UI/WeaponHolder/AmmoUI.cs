@@ -3,39 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class AmmoUI : MonoBehaviour
+namespace TestSubjectCode
 {
-    //摘要
-    //  武器彈藥資訊
-
-    [SerializeField] private WeaponHolderInfo weaponHolderInfo;
-    [SerializeField] private Weapon currentWeaponInfo;
-    [SerializeField] private TMP_Text ammoCount;
-    [SerializeField] private TMP_Text maxAmmoCount;
-    [SerializeField] private TMP_Text grenadeCount;
-
-    private void Update()
+    public class AmmoUI : MonoBehaviour
     {
-        currentWeaponInfo = weaponHolderInfo.currentWeapon;
-        
-        AmmoUIUpdate();
-    }
+        //摘要
+        //  武器彈藥資訊
 
-    private void AmmoUIUpdate()
-    {
-        string grenadeCountString = weaponHolderInfo.grenadeCount.ToString();
-        grenadeCount.text = grenadeCountString;
+        [SerializeField] private WeaponHolderInfo weaponHolderInfo;
+        [SerializeField] private Weapon currentWeaponInfo;
+        [SerializeField] private TMP_Text ammoCount;
+        [SerializeField] private TMP_Text maxAmmoCount;
+        [SerializeField] private TMP_Text grenadeCount;
 
-        if(currentWeaponInfo == null)
+        private void Update()
         {
-            return;
-        }else
-        {
-            string ammoCountString = currentWeaponInfo.ammoCount.ToString();
-            string maxAmmoCountString = currentWeaponInfo.maxAmmoCount.ToString();
+            currentWeaponInfo = weaponHolderInfo.currentWeapon;
+            
+            AmmoUIUpdate();
+        }
 
-            ammoCount.text = ammoCountString;
-            maxAmmoCount.text = maxAmmoCountString;
-        }        
+        private void AmmoUIUpdate()
+        {
+            string grenadeCountString = weaponHolderInfo.grenadeCount.ToString();
+            grenadeCount.text = grenadeCountString;
+
+            if(currentWeaponInfo == null)
+            {
+                return;
+            }else
+            {
+                string ammoCountString = currentWeaponInfo.ammoCount.ToString();
+                string maxAmmoCountString = currentWeaponInfo.maxAmmoCount.ToString();
+
+                ammoCount.text = ammoCountString;
+                maxAmmoCount.text = maxAmmoCountString;
+            }        
+        }
     }
 }

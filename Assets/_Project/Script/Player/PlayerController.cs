@@ -4,67 +4,70 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+namespace TestSubjectCode
 {
-    //摘要
-    //  負責Player按鍵操作
-
-    [SerializeField] public GameObject miniMap;
-    [SerializeField] KeyCode openMiniMapKey = KeyCode.M;
-    [SerializeField] KeyCode fireKey = KeyCode.Mouse0;
-    [SerializeField] KeyCode reloadKey = KeyCode.R;
-    [SerializeField] KeyCode throwingGrenadeKey = KeyCode.G;
-
-    void Start()
+    public class PlayerController : MonoBehaviour
     {
-        miniMap.SetActive(false);
-    }
+        //摘要
+        //  負責Player按鍵操作
 
-    void Update()
-    {
-        if(Time.timeScale == 0) return;
-        OpenMiniMap();
-        ThrowingGrenade();
+        [SerializeField] public GameObject miniMap;
+        [SerializeField] KeyCode openMiniMapKey = KeyCode.M;
+        [SerializeField] KeyCode fireKey = KeyCode.Mouse0;
+        [SerializeField] KeyCode reloadKey = KeyCode.R;
+        [SerializeField] KeyCode throwingGrenadeKey = KeyCode.G;
 
-        if(!gameObject.GetComponentInChildren<Weapon>()) return;
-        
-        Fire();
-        Reload();                
-    }
-
-    private void OpenMiniMap()
-    {
-        if (Input.GetKeyDown(openMiniMapKey) && miniMap.activeSelf == false)
-        {
-            miniMap.SetActive(true);
-        }
-        else if (Input.GetKeyDown(openMiniMapKey) && miniMap.activeSelf == true)
+        void Start()
         {
             miniMap.SetActive(false);
         }
-    }
 
-    private void Fire()
-    {
-        if (Input.GetKey(fireKey))
+        void Update()
         {
-            gameObject.GetComponentInChildren<Weapon>().Fire();
+            if(Time.timeScale == 0) return;
+            OpenMiniMap();
+            ThrowingGrenade();
+
+            if(!gameObject.GetComponentInChildren<Weapon>()) return;
+            
+            Fire();
+            Reload();                
         }
-    }
 
-    private void Reload()
-    {
-        if (Input.GetKeyDown(reloadKey))
+        private void OpenMiniMap()
         {
-            gameObject.GetComponentInChildren<Weapon>().Reload();
+            if (Input.GetKeyDown(openMiniMapKey) && miniMap.activeSelf == false)
+            {
+                miniMap.SetActive(true);
+            }
+            else if (Input.GetKeyDown(openMiniMapKey) && miniMap.activeSelf == true)
+            {
+                miniMap.SetActive(false);
+            }
         }
-    }
 
-    private void ThrowingGrenade()
-    {
-        if (Input.GetKeyDown(throwingGrenadeKey))
+        private void Fire()
         {
-            gameObject.GetComponentInChildren<WeaponHolderInfo>().ThrowGrenade();
+            if (Input.GetKey(fireKey))
+            {
+                gameObject.GetComponentInChildren<Weapon>().Fire();
+            }
+        }
+
+        private void Reload()
+        {
+            if (Input.GetKeyDown(reloadKey))
+            {
+                gameObject.GetComponentInChildren<Weapon>().Reload();
+            }
+        }
+
+        private void ThrowingGrenade()
+        {
+            if (Input.GetKeyDown(throwingGrenadeKey))
+            {
+                gameObject.GetComponentInChildren<WeaponHolderInfo>().ThrowGrenade();
+            }
         }
     }
 }

@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour
+namespace TestSubjectCode
 {
-    void Update()
+    public class PlayerInput : MonoBehaviour
     {
-        
+        void Update()
+        {
+            
+        }    
     }
-
-    
 }
