@@ -185,8 +185,8 @@ MonoBehaviour:
   radius: 2
   ibObject: {fileID: 142700998}
   ibObjectRender: {fileID: 142701001}
-  redMaterial: {fileID: 0}
-  ibMaterial: {fileID: 0}
+  redMaterial: {fileID: 2100000, guid: 728fdf535f975af4f8a94d3f02777ebf, type: 2}
+  ibMaterial: {fileID: 2100000, guid: 9fdbbcb2ce338fc4f9d33b5ee352f6c7, type: 2}
 --- !u!65 &142701000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1219,8 +1219,8 @@ MonoBehaviour:
   radius: 2
   ibObject: {fileID: 1056190372}
   ibObjectRender: {fileID: 1056190374}
-  redMaterial: {fileID: 0}
-  ibMaterial: {fileID: 0}
+  redMaterial: {fileID: 2100000, guid: 728fdf535f975af4f8a94d3f02777ebf, type: 2}
+  ibMaterial: {fileID: 2100000, guid: 9fdbbcb2ce338fc4f9d33b5ee352f6c7, type: 2}
 --- !u!1 &1203151026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,7 +1819,7 @@ PrefabInstance:
     - target: {fileID: 4769624127071926655, guid: 28ae002e9d0465e4ab2ecaf21f06f867, type: 3}
       propertyPath: grenadePrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2513779624336777098, guid: 2728a4f4974893544909ca28a08295da, type: 3}
     - target: {fileID: 5483517439207369005, guid: 28ae002e9d0465e4ab2ecaf21f06f867, type: 3}
       propertyPath: playerForce
       value: 10
