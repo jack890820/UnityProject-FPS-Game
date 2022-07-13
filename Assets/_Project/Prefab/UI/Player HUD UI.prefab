@@ -199,8 +199,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b0980b5d3465ff14f83db7474262ccef, type: 2}
+  m_sharedMaterial: {fileID: 8261307776540679382, guid: b0980b5d3465ff14f83db7474262ccef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -334,8 +334,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b0980b5d3465ff14f83db7474262ccef, type: 2}
+  m_sharedMaterial: {fileID: 8261307776540679382, guid: b0980b5d3465ff14f83db7474262ccef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -456,7 +456,7 @@ MonoBehaviour:
   currentWeaponInfo: {fileID: 0}
   ammoCount: {fileID: 6168324175818201438}
   maxAmmoCount: {fileID: 3904846233363946705}
-  grenadeCount: {fileID: 0}
+  grenadeCount: {fileID: 6513224296356755581}
 --- !u!1 &3673574298118400906
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 5607672434441831121}
   - component: {fileID: 6343885962719096929}
   m_Layer: 5
-  m_Name: Info_Weapon/
+  m_Name: /
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1016,8 +1016,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: /
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b0980b5d3465ff14f83db7474262ccef, type: 2}
+  m_sharedMaterial: {fileID: 8261307776540679382, guid: b0980b5d3465ff14f83db7474262ccef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1348,7 +1348,7 @@ Canvas:
   m_GameObject: {fileID: 6955529237836828907}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 0.5
   m_PixelPerfect: 1
@@ -1468,8 +1468,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 30
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b0980b5d3465ff14f83db7474262ccef, type: 2}
+  m_sharedMaterial: {fileID: 8261307776540679382, guid: b0980b5d3465ff14f83db7474262ccef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
