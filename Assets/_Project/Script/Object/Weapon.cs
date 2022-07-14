@@ -29,10 +29,10 @@ namespace TestSubjectCode
 
         void Update()
         {
-            StillCanReload();
+            Loading();
         }
 
-        private void StillCanReload()
+        private void Loading()
         {
             if (reloading == true) //即使彈藥全滿還是能裝填
             {
