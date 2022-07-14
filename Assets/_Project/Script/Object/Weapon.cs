@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,9 +14,9 @@ namespace TestSubjectCode
         [SerializeField] public int maxAmmoCount; //最大彈藥數    
         public int ammoCount; //彈藥數
         [SerializeField] float fireRate, maxreloadTime, doubleClickTime; //射速, 最大裝填時間, 雙擊時間
-        float reloadTime, lastClickTime, fillAmountReload, lastFireTime; //裝填時間, 最後點擊時間, 裝填進度條, 最後開火時間
+        public float reloadTime, lastClickTime, fillAmountReload, lastFireTime; //裝填時間, 最後點擊時間, 裝填進度條, 最後開火時間
         [SerializeField] public Image progressBarReload; //裝填進度條
-        [SerializeField] bool semiAuto , reloading; //半自動, 裝填中
+        [SerializeField] public bool semiAuto , reloading; //半自動, 裝填中
         
         private void Start()
         {
